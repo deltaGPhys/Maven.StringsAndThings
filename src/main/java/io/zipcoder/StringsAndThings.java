@@ -70,16 +70,9 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        //this... seems kludgey, but kinda fun
-        input = input.replace("[^g]","x");
-        if (!(input.length() == 1)
-            && !(input.substring(0,2) == "gx")
-            && !(input.substring(input.length()-2,input.length()) == "xg")
-                && !(input.contains("xgx"))) {
-            return true;
-        } else {
-            return false;
-        }
+       
+        input = ("x"+input+"x").replace("[^g]","x");
+        return !(input.contains("xgx"));
     }
 
 
